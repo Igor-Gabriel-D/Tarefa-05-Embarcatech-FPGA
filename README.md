@@ -81,3 +81,12 @@ BitDogLab
 - IDC Central → Módulo LoRa (SPI)
 
 - I2C → Display OLED SSD1306
+
+
+## Diagrama de Blocos
+![Diagrama de blocos](./img/image.png)
+
+
+
+
+
