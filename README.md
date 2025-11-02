@@ -18,8 +18,8 @@ Tarefa-05-Embarcatech-FPGA/
 │
 ├── fpga/                     # Arquivos relacionados ao SoC na ColorLight i9
 │   ├── build/                # Bitstream e arquivos gerados pelo LiteX
-│   ├── firmware/             # Código C bare-metal para o VexRiscv
-│   └── scripts/              # Scripts Python de geração do SoC com LiteX
+│   └── firmware/             # Código C bare-metal para o VexRiscv
+│   └── litex/                # Código Python descrevendo o SoC com oLitex
 │
 ├── bitdoglab/                # Firmware da BitDogLab
 │   ├── src/                  # Código-fonte principal
@@ -36,9 +36,9 @@ Componentes principais:
 
 - Core: VexRiscv
 
-- SPI: Interface com o módulo LoRa RFM96
+- SPI: Interface com o módulo LoRa RFM96 (IDC: CN2)
 
-- I2C: Interface com o sensor AHT10
+- I2C: Interface com o sensor AHT10 (JST: J2)
 
 Fluxo de operação:
 
