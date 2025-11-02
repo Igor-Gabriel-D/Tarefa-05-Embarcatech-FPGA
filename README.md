@@ -68,13 +68,13 @@ Fluxo de operação:
 ## 🔌 Conexões e Pinos Utilizados
 ### FPGA (ColorLight i9)
 
-- Conector IDC (CNx) → LoRa (SPI)
+- Conector IDC (CN2) → LoRa (SPI)
 
--- MOSI, MISO, SCK, NSS, GND, 3V3
+ - MOSI, MISO, SCK, NSS, GND, 3V3
 
-- Conector JST (I2C) → Sensor AHT10
+- Conector JST (J2) → Sensor AHT10
 
--- SDA, SCL, GND, 3V3
+ - SDA, SCL, GND, 3V3
 
 BitDogLab
 
