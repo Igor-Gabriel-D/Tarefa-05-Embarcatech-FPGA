@@ -87,6 +87,61 @@ BitDogLab
 ![Diagrama de blocos](./img/image.png)
 
 
+## Instruções de Compilação e Execução
+
+### 1. Preparação do Ambiente
+
+Antes de compilar, certifique-se de ter configurado o ambiente da **OSS CAD Suite**:
+
+```bash
+source caminhp/para/o/oss-cad-suite/environment
+```
+
+### 2. Geração do SoC com LiteX
+
+Vá para o diretório fpga:
+
+
+```bash
+cd fpga
+```
+
+
+Execute o seguinte comando para gerar o bitsteam do SoC a partir da colorlight_i5 mais o módulo dot_product:
+
+```bash
+python3 litex/colorlight_i5.py --board i9 --revision 7.2 --build --cpu-type=picorv32 --ecppack-compress
+```
+
+### 3. Compilação do Firmware
+
+Para compilar o firmware que será executado na placa execute os seguintes comando:
+```bash
+cd firmware/
+make
+cd ..
+```
+
+### 4. Gravação do Bitstream na FPGA
+
+Com isso, grave o bitsteam na placa usando o programa openFPGALoader: 
+```bash
+openFPGALoader -b colorlight-i5 build/colorlight_i5/gateware/colorlight_i5.bit
+```
+### 5. Execução e Teste via Terminal Serial
+Por fim execute o seguinte comando para carregar o firmware e entrar no terminal da bios:
+
+```bash
+litex_term /dev/ttyACM0 --speed 115200 --kernel firmware/main.bin
+```
+ Após isso, pressione `enter` digite `reboot`.
+
+ Para executar a captura dos dados do sensor aht10 e o envio através do módulo LoRa, execute no prompt do firmware:
+ ```bash
+RUNTIME> aht10
+ ```
+
+
 
 
 
